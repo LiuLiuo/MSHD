@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MSHD</title>
+</head>
+<body>
+    <div style="width: 100%; height: 15px"></div>
+    <p>公告栏</p>
+    <table border="1">
+        <tr>
+            <td>编码</td>
+            <td>类型</td>
+            <td>详情</td>
+        </tr>
+        {% for totalData in totalDatas %}
+        <tr>
+            <td>{{totalData.ID}}</td>
+            <td>{{totalData.type}}</td>
+            <td>{{totalData.detail}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<div style="width: 100%; height: 15px"></div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灾情数据发送</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script>
+function sendData(){
+    var type=document.getElementById("infoId").value;
+    var url=document.getElementById("urlId").value;
+
+    if(type=="336"){
+         alert("336:生命线灾情数据已发送成功");}
+        else if(type=="111"){
+         alert("111:人员死亡统计数据已发送成功");}
+        else if(type=="221"){
+         alert("221:土木结构房屋破坏数据已发送成功");}
+        else if(type=="441"){
+         alert("441:崩塌次生灾害数据已发送成功");}
+        else if(type=="552"){
+          alert("552:灾情预测数据已发送成功");}
+          else if(type=="112"){
+         alert("112:人员受伤统计数据已发送成功");}
+        else if(type=="113"){
+         alert("113:人员失踪统计数据已发送成功");}
+        else if(type=="222"){
+         alert("222:砖木结构房屋破坏数据已发送成功");}
+        else if(type=="223"){
+          alert("223:砖混结构房屋破坏数据已发送成功");}
+          else if(type=="224"){
+         alert("224:框架结构房屋破坏数据已发送成功");}
+        else if(type=="225"){
+         alert("225:其他结构房屋破坏数据已发送成功");}
+        else if(type=="331"){
+         alert("331:交通系统灾情数据已发送成功");}
+        else if(type=="332"){
+          alert("332:供水系统灾情数据已发送成功");}
+          else if(type=="333"){
+         alert("333:输油系统灾情数据已发送成功");}
+        else if(type=="334"){
+         alert("334:燃气系统灾情数据已发送成功");}
+        else if(type=="334"){
+         alert("335:电力系统灾情数据已发送成功");}
+        else if(type=="337"){
+          alert("337:水利系统灾情数据已发送成功");}
+          else if(type=="442"){
+          alert("442:滑坡次生灾害数据已发送成功");}
+          else if(type=="443"){
+         alert("443:泥石流次生灾害数据已发送成功");}
+        else if(type=="444"){
+         alert("444:岩溶塌陷次生灾害数据已发送成功");}
+        else if(type=="445"){
+         alert("445:地裂缝次生灾害数据已发送成功");}
+        else if(type=="446"){
+          alert("446:地面沉降次生灾害数据已发送成功");}
+          else if(type=="447"){
+         alert("447:其他次生灾害数据已发送成功");}
+        else if(type=="551"){
+         alert("551:基本震情数据已发送成功");}
+        else alert("你输入的灾难类型不存在，请重新输入！");
+       inputForm.action="http://47.93.86.172/DataStorage/refreshRequest/";
+       inputForm.submit();
+   }
+function showsentData(){
+
+
+
+
+
+
+}
+function shownotsendData(){
+
+      var infoId=document.getElementById("infoId");
+
+      var label1=document.getElementById("label1");
+       var label2=document.getElementById("label2");
+       var button=document.getElementById("button");
+      infoId.style.visibility="visible";
+
+       label1.style.visibility="visible";
+      label2.style.visibility="visible";
+       button.style.visibility="visible";
+
+}
+
+</script>
+
+
+
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+			    	<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+						<a class="navbar-brand" href="http://47.93.86.172/index">MSHD</a>
+			    	</div>
+
+                <!--表头-->
+			    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					    <ul class="nav navbar-nav">
+					    	<li class="active">
+								<li>
+					    		 	<a href="http://47.93.86.172/admin">管理员登录</a>
+					    		</li>
+								<li>
+					    		 	<a href="http://47.93.86.172/DataStorage">数据发送</a>
+					    		</li>
+								<li>
+					    		 	<a href="http://47.93.86.172/disasterType">数据目录展示</a>
+					    		</li>
+					    	</li>
+				    	</ul>
+				    	<form class="navbar-form navbar-left" role="search" action="http://47.93.86.172/search">
+							{% csrf_token %}
+				    		<div class="form-group">
+					    		<input type="text" class="form-control" name="keyword"/>
+					    	</div>
+							<button type="submit" class="btn btn-default"  >搜索</button>
+					    </form>
+				    </div>
+
+		    	</nav>
+            <ul class="breadcrumb">
+			    	<li>
+			    		 <a href="http://47.93.86.172/index">Mshd</a>
+			    	</li>
+			    	<li>
+			    		 <a href="http://47.93.86.172/index">首页</a>
+			    	</li>
+			    	<li class="active">
+			    		数据请求
+			    	</li>
+			    </ul>
+			<div class="tabbable" id="tabs-547035">
+				<ul class="nav nav-tabs">
+					<li  id="tab1">
+						 <a  id="notSend"  onclick="shownotsendData();" href="http://47.93.86.172/DataStorage/shownotsendData/">未发送</a>
+					</li>
+					<li  id="tab2">
+						 <a   id="Sent"   onclick="showsentData();" href="http://47.93.86.172/DataStorage/showsentData/">已发送</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-197812">
+					</div>
+					<div class="tab-pane" id="panel-277552">
+					</div>
+				</div>
+			</div>
+			<table class="table table-hover table-bordered" id="infoTable">
+				<thead>
+				 <tr>
+           <th>灾情编号</th>
+           <th>日期</th>
+           <th>类型</th>
+            <th>上报状态</th>
+            <th>URL</th>
+           <th>上报单位</th>
+       </tr>
+				</thead>
+				<tbody>
+                {% for line in data_list %}
+            <tr id="display" class="info">
+             <td>{{line.id}}</td>
+             <td>{{line.date}}</td>
+             <td>{{line.disasterType}}</td>
+             <td>{{line.status}}</td>
+             <td>{{line.o_URL}}</td>
+             <td>{{line.requesting}}</td>
+          </tr>
+           {% endfor %}
+				</tbody>
+			</table>
+			<form role="form" id="inputForm" method="post">
+               {% csrf_token %}
+				<div class="form-group">
+					 <label for="infoId" id="label1">请输入您要发送的灾难数据类型 </label><input type="text" class="form-control" name="disasterType" id="infoId" />
+				</div>
+				<div class="form-group">
+					 <label for="urlId" id="label2">请输入您的目标URL </label><input type="text" class="form-control" id="urlId" />
+				</div>
+				 <button type="submit" onclick="sendData();" class="btn btn-default" id="button">发送</button>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

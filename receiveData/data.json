@@ -1,0 +1,63 @@
+[
+  {
+    "Code": "3101141110013360001",
+    "Location": null,
+    "Date": "2011-02-0100:00:00",
+    "Reporting_unit": "Gandou灾情委员会1",
+    "Detail": {
+      "Type": "I",
+      "Grade": "IV",
+      "Note": "多数通信设备倾斜、移位，功能失效，建筑物严重破坏，必须经大修方能恢复正常功能",
+      "Picture": null
+    }
+  },
+    {
+    "Code": "3101141112181110002",
+    "Location": null,
+    "Date": "2012-03-1100:00:00",
+    "Reporting_unit": "Gandou灾情委员会2",
+    "Detail":{
+        "Number": 2
+    }
+  },
+    {
+    "Code": "5301261052024410003",
+    "Location": null,
+    "Date": "2013-02-0100:00:00",
+    "Reporting_unit": "Gandou灾情委员会3",
+    "Detail": {
+      "Type": "III",
+      "Status": "II",
+      "Note": "Ⅱ.重大： 30＞死亡人数（人）≥10，1000＞受威胁人数（人）≥100，1000＞直接经济损失（万元）≥\n500；",
+      "Picture": null
+    }
+  },
+    {
+    "Code": "5301020020072210004",
+    "Location": null,
+    "Date": "2014-11-1123:11:45",
+    "Reporting_unit": "Gandou灾情委员会4",
+    "Detail": {
+      "Basically_intact_square": 12,
+      "Damaged_square": 23,
+      "Destroyed_square": 34,
+      "Note": "土木结构房屋破坏统计表（群体）"
+    }
+  }
+  ,  {
+    "Code": "3101061010125520005",
+    "Location": null,
+    "Date": "2015-02-0100:00:00",
+    "Reporting_unit": "Gandou灾情委员会5",
+    "Detail": {
+      "Longitude": 23.12,
+      "Latitude": 45.67,
+      "Depth": 100.3,
+      "Magnitude": 8.0,
+      "Intensity": "7",
+      "Type": "1",
+      "Note": "DisasterPrediction: 灾情预测",
+      "Picture": null
+    }
+  }
+]

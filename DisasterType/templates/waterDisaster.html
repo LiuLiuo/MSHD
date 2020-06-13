@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MSHD</title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>MSHD</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--    <p>网页url导航</p>-->
+<!--    <p>47.93.86.172/index:网页导航界面</p>-->
+<!--    <p>47.93.86.172/bolletinboard:公告栏界面</p>-->
+<!--    <p>47.93.86.172/upload:Json文件上传界面（并实现Json文件解析，数据读取与存入）</p>-->
+<!--    <p>47.93.86.172/disasterType:分灾情类型目录展示（二级菜单中死亡、土木、通信、崩塌、灾情预测可点击跳转）</p>-->
+<!--    <p>47.93.86.172/DataStorage:用户根据灾情类型编号发送数据请求并响应</p>-->
+    <div class="container">
+    	<div class="row clearfix">
+	    	<div class="col-md-12 column">
+		    	<nav class="navbar navbar-default" role="navigation">
+			    	<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+						<a class="navbar-brand" href="http://47.93.86.172/index">MSHD</a>
+			    	</div>
+
+			    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					    <ul class="nav navbar-nav">
+					    	<li class="active">
+								<li>
+					    		 	<a href="http://47.93.86.172/admin">管理员登录</a>
+					    		</li>
+								<li>
+					    		 	<a href="http://47.93.86.172/DataStorage">数据发送</a>
+					    		</li>
+                                <li>
+					    		 	<a href="http://47.93.86.172/disasterType">数据目录展示</a>
+					    		</li>
+					    	</li>
+				    	</ul>
+				    	<form class="navbar-form navbar-left" role="search" action="http://47.93.86.172/search">
+							{% csrf_token %}
+				    		<div class="form-group">
+					    		<input type="text" class="form-control" name="keyword"/>
+					    	</div>
+							<button type="submit" class="btn btn-default"  >搜索</button>
+					    </form>
+				    </div>
+
+		    	</nav>
+			    <ul class="breadcrumb">
+			    	<li>
+			    		 <a href="#">Mshd</a>
+			    	</li>
+			    	<li>
+			    		 <a href="http://47.93.86.172/index">首页</a>
+			    	</li>
+			    	<li>
+			    		 <a href="http://47.93.86.172/disasterType">数据</a>
+			    	</li>
+			    	<li class="active">
+			    		生命线灾情-供水
+			    	</li>
+			    </ul>
+			    <div class="jumbotron">
+			    	<h1>
+			    		生命线灾情-供水
+			    	</h1>
+                     <div style="width: 100%; height: 15px"></div>
+    <table class="table table-hover table-bordered" id="infoTable">
+        <tr>
+            <td>编码</td>
+            <td>上报时间</td>
+            <td>地点</td>
+            <td>类型</td>
+            <td>破坏等级</td>
+            <td>典型照片</td>
+            <td>灾情描述</td>
+            <td>上报单位</td>
+        </tr>
+        {% for waterDisaster in waterDisasters %}
+        <tr id="display" class="info">
+            <td>{{waterDisaster.ID}}</td>
+            <td>{{waterDisaster.date}}</td>
+            <td>{{waterDisaster.location}}</td>
+            <td>{{waterDisaster.type}}</td>
+            <td>{{waterDisaster.grade}}</td>
+            <td>{{waterDisaster.picture}}</td>
+            <td>{{waterDisaster.note}}</td>
+            <td>{{waterDisaster.reporting_unit}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<div style="width: 100%; height: 15px"></div>
+		    	</div>
+		    </div>
+	    </div>
+    </div>
+</body>
+</html>
+
+
+
